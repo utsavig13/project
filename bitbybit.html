@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Dream Real Estate
+- Find Your Perfect Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }            100% { transform: translateX(-100%); }
+        }        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }        .font-pacifico {
+            font-family: 'Pacifico', serif;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;        }
+        @keyframes ping {
+            75%, 100% {                transform: scale(2);
+                opacity: 0;
+            }        }
+        .animate-ping {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        @keyframes pulse {
+            50% {                opacity: .5;
+            }
+        }        .animate-pulse {            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }    </style>
+</head><body class="bg-white">
+    <!-
+- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-orange-500 via-pink-500 to-red-500 flex items-center justify-center z-50">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+                <!-
+- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-4 h-4 bg-white bg-opacity-20 rounded-full animate-ping" style="animation-delay: 0s;"></div>
+            <div class="absolute top-32 right-20 w-6 h-6 bg-white bg-opacity-20 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-1/4 w-3 h-3 bg-white bg-opacity-20 rounded-full animate-ping" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-60 right-1/3 w-5 h-5 bg-white bg-opacity-20 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>        </div>        <div class="relative z-10 text-center text-white max-w-md mx-auto px-6">
+            <!-
+- Logo -->
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm mb-4">
+                    <i class="ri-home-4-line text-4xl text-white"></i>
+                </div>
+                <h1 class="text-4xl font-pacifico text-white">                    Dream Real Estate
+                </h1>
+            </div>
+            <!-
+- Loading animation -->
+            <div class="mb-8">                <div class="relative w-64 h-64 mx-auto">
+                    <!-
+- Outer rotating circle -->
+                    <div class="absolute inset-0 border-4 border-white border-opacity-30 rounded-full"></div>
+                  <br>
+                    <!-
+- Progress circle -->
+                    <div id="progress-circle" class="absolute inset-0 border-4 border-transparent border-t-white rounded-full animate-spin"></div>
+                                        <!-
+- Inner content -->
+                    <div class="absolute inset-4 bg-white bg-opacity-10 rounded-full backdrop-blur-sm flex flex-col items-center justify-center">
+                        <div id="progress-text" class="text-5xl font-bold mb-2">0%</div>
+                        <div class="w-8 h-8 flex items-center justify-center">                            <i class="ri-home-heart-line text-2xl animate-pulse"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-
+- Loading text -->
+            <div class="mb-8">
+                <p id="loading-text" class="text-lg font-medium animate-pulse min-h-6">
+                    Initializing Dream Real Estate...
+                </p>            </div>
+            <!-
+- Progress bar -->
+            <div class="w-full bg-white bg-opacity-20 rounded-full h-2 backdrop-blur-sm">
+                <div id="progress-bar" class="bg-white h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%;"></div>
+            </div>        </div>
+    </div>
+    <!-
+- Main Website Content (Hidden initially) -->
+    <div id="main-content" style="display: none;">
+        <!-
+- Sale Banner with Marquee -->        <div class="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white py-4 overflow-hidden">
+            <div class="whitespace-nowrap animate-marquee">
+                <div class="inline-flex items-center space-x-12 px-8">
+                    <div class="inline-flex items-center space-x-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center">                                <i class="ri-gift-line text-2xl"></i>
+                            </div>                            <div>
+                                <h3 class="font-bold text-lg">🙏 GANESH UTSAV SPECIAL 🙏</h3>                                <p class="text-sm">Get 10% OFF on all properties!</p>
+                            </div>                        </div>
+                        <div class="text-yellow-300 font-semibold">✨ LIMITED TIME OFFER ✨</div>
+                    </div>                    <div class="inline-flex items-center space-x-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-gift-line text-2xl"></i>
+                            </div>                            <div>
+                                <h3 class="font-bold text-lg">🙏 GANESH UTSAV SPECIAL 🙏</h3>
+                                <p class="text-sm">Get 10% OFF on all properties!</p>
+                            </div>                        </div>
+                        <div class="text-yellow-300 font-semibold">✨ LIMITED TIME OFFER ✨</div>
+                    </div>
+                    <div class="inline-flex items-center space-x-8">                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center">                                <i class="ri-gift-line text-2xl"></i>
+                            </div>
+                            <div>                                <h3 class="font-bold text-lg">🙏 GANESH UTSAV SPECIAL 🙏</h3>
+                                <p class="text-sm">Get 10% OFF on all properties!</p>
+                            </div>                        </div>
+                        <div class="text-yellow-300 font-semibold">✨ LIMITED TIME OFFER ✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-
+- Hero Section -->
+        <section class="relative h-screen overflow-hidden">
+            <div class="absolute inset-0">                <img src="https://readdy.ai/api/search-image?query=modern Indian residential towers with traditional architectural elements, contemporary glass facades mixed with Indian motifs, urban Indian cityscape, golden hour lighting, luxury apartment buildings in Mumbai or Delhi style, clean minimal background, professional real estate photography&width=1200&height=600&seq=indianhero1&orientation=landscape"                     alt="Indian Architecture"
+                     class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
+            </div>            <div class="relative z-10 container mx-auto px-4 h-full flex items-center">                <div class="max-w-2xl text-white">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Find Your                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-red-400">
+                            Dream Home                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                        Discover premium properties in prime Indian locations. Your perfect home awaits.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">                        <button class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-600 hover:to-pink-600 transition-all duration-300 whitespace-nowrap cursor-pointer">
+                            Browse Properties
+                        </button>                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 whitespace-nowrap cursor-pointer">
+                            Schedule Tour
+                        </button>                    </div>
+                </div>
+            </div>        </section>
+        <!-
+- Featured Properties -->        <section class="py-20 bg-gray-50">            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5x                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Featured Properties</h2>
+                    <p class="text-lg text-gray-600 mt-4">Explore some of the best properties in premium Indian locations.</p>
+                </div>
+
+                <!-- Property Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Property Card 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="mumbai.jpg" alt="Property 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">3BHK Premium Flat - Mumbai</h3>
+                            <p class="text-gray-600 mt-2">Located in Lower Parel, fully furnished with sea view.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-orange-600">₹2.5 Cr</span>
+                                <button class="text-sm bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="pune.jpg" alt="Property 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">2BHK Modern Home - Pune</h3>
+                            <p class="text-gray-600 mt-2">Affordable luxury with top-tier amenities and great location.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-orange-600">₹1.2 Cr</span>
+                                <button class="text-sm bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="banglururu.jpeg" alt="Property 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Villa with Garden - Bangalore</h3>
+                            <p class="text-gray-600 mt-2">Spacious villa with private garden, ideal for families.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-lg font-bold text-orange-600">₹3.8 Cr</span>
+                                <button class="text-sm bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-xl font-semibold mb-2">Dream Real Estate</h3>
+                <p>© 2025 Dream Real Estate. All rights reserved.</p>
+                <p class="text-sm text-gray-400 mt-1">Designed for luxury living in Indian cities.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript to handle loading screen -->
+    <script>
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.floor(Math.random() * 10) + 1;
+            if (progress > 100) progress = 100;
+
+            document.getElementById('progress-text').textContent = `${progress}%`;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = progress < 100 ? 'Loading premium homes...' : 'Loading complete!';
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.getElementById('main-content').style.display = 'block';
+                }, 1000);
+            }
+        }, 400);
+    </script>
+</body>
+</html>
